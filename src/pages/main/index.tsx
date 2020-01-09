@@ -1,5 +1,5 @@
 import React from "react";
-
+import './index.less'
 export function Main() {
-    return <div>Main</div>
+    return <div className="main">Main</div>
 }
