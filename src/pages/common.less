@@ -1,14 +1,12 @@
 .common-style {
   border: 1px solid red;
-  p {
-    color: @color-red;
-  }
 }
 
-@color-red: red;
+//@color-red: blue;
 
-.common-mixin {
-
+.common-mixin(@color-red: orange) {
+  color: @color-red;
+  font-size: 100px;
 }
 
 .common-mixin-test(@rules) {
