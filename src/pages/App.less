@@ -1,7 +1,20 @@
+@import (reference) './common';
 .App {
   p {
     //word-break:break-all;
     white-space: pre-wrap;
   }
+  .test-width {
+    background: red;
+  }
+  .hello({
+    .test-width {
+      width: 100%;
+      max-width: (375/2) * @px;
+      // 这块如果用50% 就惨了.简单来说就是,我们必须去使用转化单位,而不是原生单位,使用
+      // 原生单位,我们没办法进行正确的换算操作
+      display: inline-block;
+    }
+  });
 }
 

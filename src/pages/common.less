@@ -14,3 +14,25 @@
 .common-mixin-test(@rules) {
   @rules();
 }
+
+
+.hello(@rules) {
+  @media(min-width: 1280px) {
+    @px: 1px;
+    @rules();
+    background: grey;
+  }
+  @media(max-width: 1280px) {
+    @px: 1px * 1280 / 1920;
+    @rules();
+    background: green;
+  }
+  @media(max-width: 800px) {
+    /*
+    1rem = 10px
+     */
+    @px: 10vw / 37.5;
+    @rules();
+    background: yellow;
+  }
+}
