@@ -1,7 +1,63 @@
 @import (reference) './mixin/mixin';
 
-.test-less {
-  p {
-    .mixin-base-font(green);
+/*
+这个例子说明
+当我们的变量的覆盖,是只在
+ */
+
+/*
+假设我们的UI 是在1980下展开的.
+ */
+
+.wrapper-with-mixin(@rules) {
+  // 这种写法失效,说明了,有东西在限制
+  @size: 1980px;
+  @uiWidth: 1980;
+  @media (min-width: @size) {
+    @px: @size / @uiWidth;
+    @rules();
+  }
+  @size: 1000px;
+  @media (max-width: @size) {
+    @px: @size / @uiWidth;
+    @rules();
+  }
+  @size: 500px;
+  @media (max-width: @size) {
+    @px: @size / @uiWidth;
+    @rules();
   }
 }
+
+.wrapper-with-mixin({
+  .test-less {
+    @fontcolor: green;
+
+    li {
+      width: 1000 * @px;
+      .mixin-base-font(@fontcolor);
+    }
+    li:first-child {
+      @fontcolor: black;
+      .mixin-base-font(@fontcolor);
+      @bgcolor: blue;
+      // 这种情况下,无法覆盖掉,原因不清楚.看起来只能通过注入变量进去来实现.
+      .local-mixin();
+    }
+    li:last-child {
+      @fontcolor: red;
+      .mixin-base-font(@fontcolor);
+    }
+
+
+    .local-mixin() {
+      background: @bgcolor ;
+    }
+    @bgcolor: orange;
+  }
+});
+
+
+
+
+

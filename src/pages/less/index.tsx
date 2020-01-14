@@ -3,6 +3,14 @@ import './index.less'
 
 export const TestLess : React.FC = () => {
     return <div className="test-less">
-        <p>123</p>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
     </div>
 }
+
+/*
+https://www.html.cn/doc/less/features/#mixins-parametric-feature
+ */
