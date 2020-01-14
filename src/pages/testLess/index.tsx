@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {Main} from "../main";
+import {TestLess} from "../less";
 
 export const App: React.FC = () => {
 
@@ -44,15 +45,15 @@ export const App: React.FC = () => {
             <h2>less</h2>
             <p dangerouslySetInnerHTML={{__html: content}} />
             <h2>content</h2>
-            <div onClick={func}>test</div>
-            <div className="common-style">
-                <p>123</p>
-                <div>345</div>
-            </div>
-            <div className="test-width">
-                A
-            </div>
-            <Main/>
+            {/*<div onClick={func}>test</div>*/}
+            {/*<div className="common-style">*/}
+            {/*    <p>123</p>*/}
+            {/*    <div>345</div>*/}
+            {/*</div>*/}
+            {/*<div className="test-width">*/}
+            {/*    A*/}
+            {/*</div>*/}
+            <TestLess/>
         </div>
     );
 }

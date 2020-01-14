@@ -5,4 +5,4 @@ import {App} from "./testLess";
 import {Margin1} from "./cssPlayGround/margin";
 import {TestTsFunc} from "./ts/func/index";
 
-export default TestTsFunc;
+export default App;
