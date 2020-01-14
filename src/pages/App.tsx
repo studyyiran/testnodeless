@@ -3,5 +3,6 @@ import './App.less';
 import './common.less';
 import {App} from "./testLess";
 import {Margin1} from "./cssPlayGround/margin";
+import {TestTsFunc} from "./ts/func/index";
 
-export default Margin1;
+export default TestTsFunc;
